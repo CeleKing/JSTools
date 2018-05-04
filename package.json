@@ -1,0 +1,23 @@
+{
+  "name": "jstools",
+  "version": "1.0.0",
+  "description": "js methods in working",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CeleKing/JSTools.git"
+  },
+  "author": "CeleKing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CeleKing/JSTools/issues"
+  },
+  "homepage": "https://github.com/CeleKing/JSTools#readme",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1"
+  }
+}
