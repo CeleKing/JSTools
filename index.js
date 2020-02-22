@@ -54,3 +54,28 @@ const initialState = {dollars: 0, euros:0, yens: 0, pounds: 0};
 const totals = items.reduce(bigTotalPriceReducer, initialState);
 
 console.log(totals);
+
+
+// 截取汉字后的内容
+function getRealFileName(filename) {
+  var tag=-1;//第一个汉字开头前面有几个 符号的标识
+  var r="";//最终结果
+  for(var i =0;i<filename.length;i++){//原来字符串长度
+    if(((filename.charAt(i)).charCodeAt(0))<255){//从第一个字符开始,是 标点 就 tag++;
+      
+      tag++;
+    }else{//碰到一个汉字的时候 直接break 跳出for循环
+      break;
+    }
+  }
+  if(tag>-1){//falg>-1 说明++过了,字符串肯定不是汉字开头
+  tag++;
+  for(tag;tag<=filename.length;tag++){//如果最开始的字符串 有3个逗号,那么flag应为2,那么 我们需要截取的 就应该是源字符串 下标 3开始,所以上面一行flag++;
+    r+=filename.charAt(tag);
+    }
+  }else{
+  r=filename;
+  }
+
+  return r
+}
